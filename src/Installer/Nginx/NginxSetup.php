@@ -32,7 +32,7 @@ class NginxSetup extends BaseInstaller
 
         $this->install('python-certbot-nginx');
 
-        if ($ssl) {
+        if ($ssl == 'yes') {
             $this->process([
                 "certbot --nginx -n --agree-tos --email=$email  -d $fqdn -d www.$fqdn",
                 "certbot renew --dry-run"

@@ -50,7 +50,7 @@ class ServerSetup extends BaseInstaller
         $this->config->app('ip', trim($ip));
 
         $ssl = $this->io->choice('Enable SSL (https)', ['yes', 'no'], 'yes');
-        $this->config->app('ssl', $ssl === 'yes' ? true : false);
+        $this->config->app('ssl', $ssl);
 
     }
 
