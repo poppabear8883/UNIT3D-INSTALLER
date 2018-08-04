@@ -47,8 +47,9 @@ return [
     'echo-protocol' => '',
 
     /* API Keys */
-    'fanart-key' => '',
     'tmdb-key' => '',
+    'omdb-key' => '',
+
+    'fanart-key' => '',
     'tvdb-key' => '',
-    'omdb-key' => ''
 ];
