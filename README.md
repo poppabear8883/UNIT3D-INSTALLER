@@ -1,9 +1,7 @@
 <p align="center">
     <img src="https://i.imgur.com/q4awiMm.png" alt="UNIT3D Logo">
 </p>
-<p align="center">
-    <b>A Special Thanks To All Our <a href="https://github.com/UNIT3D/UNIT3D/graphs/contributors">Contributors</a></b>
-</p>
+
 <hr>
 
 <p align="center">
@@ -18,7 +16,20 @@
 ## This Repository
 Installer for the UNIT3D Platform.
 
-**(NOTE: THERE IS NOT AN OFFICIAL RELEASE OF THIS INSTALLER AS OF YET.)**
+**(NOTE: THERE IS NO OFFICIAL RELEASE OF THIS INSTALLER AS OF YET.)**
+
+**Clone this repository and run install.sh**
+
+```
+sudo ./install.sh
+```
+
+**Officially Suppoerted OS's**
+- Ubuntu 16.04 LTS
+- Ubuntu 18.04 LTS
+
+**Un-Officially Supported OS's**
+- Debain 7+
 
 ## About UNIT3D
 Nex-Gen Torrent Tracker Software called "UNIT3D."
