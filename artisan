@@ -1,0 +1,29 @@
+#!/usr/bin/env php
+<?php
+
+use Symfony\Component\Console\Application;
+
+set_time_limit(0);
+
+date_default_timezone_set('America/New_York');
+
+// include the composer autoloader
+require_once __DIR__ . '/vendor/autoload.php';
+
+// include our custom helpers
+require_once __DIR__ . '/src/Helpers/helpers.php';
+
+$app = new Application();
+
+// register our commands
+$app->addCommands([
+    new App\Commands\InstallCommand(),
+]);
+
+// run the app
+try {
+    $app->run();
+} catch (Exception $e) {
+    die($e->getMessage());
+}
+?>

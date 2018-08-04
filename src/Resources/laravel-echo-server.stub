@@ -1,0 +1,27 @@
+{
+	"authHost": "{{PROTOCOL}}://{{FQDN}}",
+	"authEndpoint": "/broadcasting/auth",
+	"clients": [],
+	"database": "redis",
+	"databaseConfig": {
+		"redis": {},
+		"sqlite": {
+			"databasePath": "/database/laravel-echo-server.sqlite"
+		}
+	},
+	"devMode": false,
+	"host": null,
+	"port": "{{PORT}}",
+	"protocol": "{{PROTOCOL}}",
+	"socketio": {},
+	"sslCertPath": "/etc/letsencrypt/live/{{FQDN}}/cert.pem",
+	"sslKeyPath": "/etc/letsencrypt/live/{{FQDN}}/privkey.pem",
+	"sslCertChainPath": "/etc/letsencrypt/live/{{FQDN}}/fullchain.pem",
+	"sslPassphrase": "",
+	"apiOriginAllow": {
+		"allowCors": false,
+		"allowOrigin": "",
+		"allowMethods": "",
+		"allowHeaders": ""
+	}
+}

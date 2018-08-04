@@ -1,0 +1,21 @@
+{
+  "chmod": "0755",
+  "directories": [
+    "src"
+  ],
+  "files": [
+    ""
+  ],
+  "finder": [
+    {
+      "name": "*.php",
+      "exclude": [
+      ],
+      "in": "vendor"
+    }
+  ],
+  "git-version": "package_version",
+  "main": "artisan",
+  "output": "unit3d.phar",
+  "stub": true
+}
