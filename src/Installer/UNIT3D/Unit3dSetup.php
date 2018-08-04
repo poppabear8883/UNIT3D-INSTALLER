@@ -99,13 +99,13 @@ class Unit3dSetup extends BaseInstaller
 
         $this->createFromStub([
             '{{FQDN}}' => $fqdn,
-            '{{PORT}}' => $echo_port
+            '{{PORT}}' => $echo_port,
+            '{{PROTOCOL}}' => $echo_protocol,
         ], '../laravel-echo-server.stub', '/var/www/html/laravel-echo-server.json');
 
         $this->createFromStub([
             '{{INSTALLDIR}}' => $install_dir,
             '{{WEBUSER}}' => $web_user,
-            '{{PROTOCOL}}'
         ], 'supervisor/app.conf', '/etc/supervisor/conf.d/unit3d.conf');
 
         $this->process([
