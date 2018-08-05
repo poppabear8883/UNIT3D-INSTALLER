@@ -8,7 +8,7 @@ class IsPhpVersionCompat extends BasePolicy
     {
         $phpv = $this->config->app('min_php_version');
         if (version_compare(PHP_VERSION, $phpv, '<')) {
-            $this->throwError('PHP Version is not compatible with NxPanel. Install PHP ' . $phpv . ' or later...');
+            $this->throwError('PHP Version is not compatible with UNIT3D. Install PHP ' . $phpv . ' or later...');
         }
     }
 }
