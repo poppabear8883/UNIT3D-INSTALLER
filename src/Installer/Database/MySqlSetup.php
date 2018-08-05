@@ -38,11 +38,18 @@ class MySqlSetup extends BaseInstaller
             ]);
         }
 
+        $this->createFromStub(
+            [
+                '{{PASSWORD}}' => $root_pass
+            ],
+            'mysql/.my.cnf',
+            '/root/.my.cnf'
+        );
+
         $this->process([
             'update-rc.d mysql defaults',
             'service mysql start',
             "mysqladmin -u root password $root_pass",
-            "echo -e \"[client]\npassword='$root_pass'\n\" > /root/.my.cnf",
             'chmod 600 /root/.my.cnf'
         ]);
 
