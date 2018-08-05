@@ -26,16 +26,18 @@ class MySqlSetup extends BaseInstaller
 
         $this->process(['cp -f ' . resource_path(distname() . "/mysql/$mycnf") . ' /etc/mysql/my.cnf']);
 
-        if (distmainver() !== '16.04') {
-            $this->process(['mysql_install_db']);
-        }
+        if (distname() === 'ubuntu') {
+            if (distmainver() !== '16.04' && distmainver() !== '18.04') {
+                $this->process(['mysql_install_db']);
+            }
 
-        if (distmainver() === '18.04') {
-            $this->process([
-                'mkdir /var/lib/mysql',
-                'chown mysql:mysql /var/lib/mysql',
-                'mysqld --initialize-insecure',
-            ]);
+            if (distmainver() === '18.04' && !is_dir('/var/lib/mysql')) {
+                $this->process([
+                    'mkdir /var/lib/mysql',
+                    'chown mysql:mysql /var/lib/mysql',
+                    'mysqld --initialize-insecure',
+                ]);
+            }
         }
 
         $this->createFromStub(
