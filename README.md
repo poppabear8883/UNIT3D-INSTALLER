@@ -16,7 +16,7 @@
 ## This Repository
 Installer for the UNIT3D Platform.
 
-**(NOTE: THERE IS NO OFFICIAL RELEASE OF THIS INSTALLER AS OF YET.)**
+**Major Release v1.0-beta**
 
 **Clone this repository and run install.sh**
 
