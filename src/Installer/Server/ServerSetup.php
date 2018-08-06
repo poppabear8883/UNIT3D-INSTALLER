@@ -104,9 +104,6 @@ class ServerSetup extends BaseInstaller
 
         $port = $this->question('Chat Listening Port', '6001');
         $this->config->app('echo-port', $port);
-
-        $protocol = $this->io->choice('Chat Server Protocol', ['https', 'http'], 'https');
-        $this->config->app('echo-protocol', $protocol);
     }
 
     protected function apiKeys()

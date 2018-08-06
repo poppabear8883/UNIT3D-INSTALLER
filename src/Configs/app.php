@@ -52,7 +52,6 @@ return [
 
     /* Chat */
     'echo-port' => '',
-    'echo-protocol' => '',
 
     /* API Keys */
     'tmdb-key' => '',

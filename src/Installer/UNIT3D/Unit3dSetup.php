@@ -101,12 +101,12 @@ class Unit3dSetup extends BaseInstaller
         $fqdn = $this->config->app('hostname');
         $web_user = $this->config->os('web-user');
         $echo_port = $this->config->app('echo-port');
-        $echo_protocol = $this->config->app('echo-protocol');
+        $protocol = $this->config->app('ssl') == 'yes' ? 'https' : 'http';
 
         $this->createFromStub([
             '{{FQDN}}' => $fqdn,
             '{{PORT}}' => $echo_port,
-            '{{PROTOCOL}}' => $echo_protocol,
+            '{{PROTOCOL}}' => $protocol,
         ], '../laravel-echo-server.stub', '/var/www/html/laravel-echo-server.json');
 
         $this->createFromStub([
