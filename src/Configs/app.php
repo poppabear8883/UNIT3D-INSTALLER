@@ -42,6 +42,14 @@ return [
     'dbpass' => '',
     'dbrootpass' => '',
 
+    /* Mail */
+    'mail_driver' => 'smtp',
+    'mail_host' => '',
+    'mail_port' => '',
+    'mail_username' => '',
+    'mail_password' => '',
+    'mail_from_name' => '',
+
     /* Chat */
     'echo-port' => '',
     'echo-protocol' => '',

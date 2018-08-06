@@ -15,6 +15,8 @@ class ServerSetup extends BaseInstaller
 
         $this->database();
 
+        $this->mail();
+
         $this->chat();
 
         $this->apiKeys();
@@ -34,8 +36,8 @@ class ServerSetup extends BaseInstaller
                 $this->warning("Invalid Format:");
                 $this->io->writeln("<fg=blue>Must be a fully qualified domain name. Examples:</>");
                 $this->io->listing([
-                    fqdn().'.com',
-                    'server.'.fqdn().'.com',
+                    fqdn() . '.com',
+                    'server.' . fqdn() . '.com',
                     'example.com',
                     'server.example.com',
                     'localhost'
@@ -65,7 +67,7 @@ class ServerSetup extends BaseInstaller
         $dbpass = $this->question('Owner Password', '');
         $this->config->app('password', $dbpass);
 
-        $default = 'admin@'.$this->config->app('hostname');
+        $default = 'admin@' . $this->config->app('hostname');
         $email = $this->question('Owner Email', $default);
         $this->config->app('owner_email', trim($email));
     }
@@ -130,5 +132,46 @@ class ServerSetup extends BaseInstaller
 
         $key = $this->question('OMDB Key', '');
         $this->config->app('omdb-key', $key);
+    }
+
+    protected function mail()
+    {
+        $this->io->writeln('<fg=blue>Mail Settings</>');
+        $this->io->writeln('(Used for things like invites, registration, ect.)');
+        $this->seperator();
+
+        $this->io->writeln('<fg=blue>/* You will need a provider like torguard. */</>');
+        $this->io->writeln('<fg=cyan>https://torguard.net/anonymous-email.php</>');
+
+        $this->io->writeln('Ref: <fg=cyan>https://laravel.com/docs/5.6/mail#introduction</>');
+
+        $value = $this->io->choice('Mail Driver', [
+            "smtp",
+            "sendmail",
+            "mailgun",
+            "mandrill",
+            "ses",
+            "sparkpost",
+            "log",
+            "array"
+        ], 'smtp');
+
+        $this->config->app('mail_driver', $value);
+
+        $value = $this->question('Mail Host', '');
+        $this->config->app('mail_host', $value);
+
+        $value = $this->question('Mail Port', '');
+        $this->config->app('mail_port', $value);
+
+        $value = $this->question('Mail Username', '');
+        $this->config->app('mail_username', $value);
+
+        $value = $this->question('Mail Password', '');
+        $this->config->app('mail_password', $value);
+
+        $value = $this->question('Mail From Name', '');
+        $this->config->app('mail_from_name', $value);
+
     }
 }

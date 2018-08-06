@@ -61,6 +61,12 @@ class Unit3dSetup extends BaseInstaller
                 '{{OWNERPASSWORD}}' => $this->config->app('password'),
                 '{{TMDBAPIKEY}}' => $this->config->app('tmdb-key'),
                 '{{OMDBAPIKEY}}' => $this->config->app('omdb-key'),
+                '{{MAILDRIVER}}' => $this->config->app('mail_driver'),
+                '{{MAILHOST}}' => $this->config->app('mail_host'),
+                '{{MAILPORT}}' => $this->config->app('mail_port'),
+                '{{MAILUSERNAME}}' => $this->config->app('mail_username'),
+                '{{MAILPASSWORD}}' => $this->config->app('mail_password'),
+                '{{MAILFROMNAME}}' => $this->config->app('mail_from_name')
             ],
             '../.env.stub',
             "$install_dir/.env"
@@ -123,12 +129,13 @@ class Unit3dSetup extends BaseInstaller
             'npm run prod',
             'php artisan key:generate',
             'php artisan migrate --seed',
+            'php artisan test:email'
         ];
 
         foreach ($www_cmds as $cmd) {
             $this->process([
                 "su $web_user -s /bin/bash --command=\"cd $install_dir && $cmd\""
-            ]);
+            ], true);
         }
 
         $this->io->writeln(' ');
