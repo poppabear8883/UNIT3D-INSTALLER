@@ -6,11 +6,6 @@ class InstallerPolicies extends BasePolicy
 {
     private $steps = [
         /*
-         * Os and Distribution Support policies
-         */
-        OsSupported::class,
-
-        /*
          * Configuration policies
          */
         AppKeyExists::class,
