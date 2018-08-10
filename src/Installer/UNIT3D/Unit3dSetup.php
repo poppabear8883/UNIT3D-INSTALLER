@@ -14,6 +14,8 @@ class Unit3dSetup extends BaseInstaller
 
         $this->perms();
 
+        $this->crons();
+
         $this->setup();
 
     }
@@ -139,6 +141,18 @@ class Unit3dSetup extends BaseInstaller
         }
 
         $this->io->writeln(' ');
+    }
+
+    protected function crons()
+    {
+        $this->io->writeln("\n\n<fg=blue>Setting Up Crontabs</>");
+        $this->seperator();
+
+        $install_dir = $this->config->os('install_dir');
+
+        $this->process([
+            "(crontab -l ; echo \"* * * * * php $install_dir/artisan schedule:run >> /dev/null 2>&1\") | crontab -"
+        ]);
     }
 
 }
