@@ -8,6 +8,7 @@ return [
     'ubuntu' => [
         'pkg_manager' => 'apt',
         'web-user' => 'www-data',
+        'install_dir' => '/var/www/html',
         'nginx-sites-available_path' => '/etc/nginx/sites-available',
 
         'software' => [

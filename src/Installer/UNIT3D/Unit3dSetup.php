@@ -25,7 +25,7 @@ class Unit3dSetup extends BaseInstaller
         $this->io->writeln('<fg=blue>Cloning Source Files</>');
         $this->seperator();
 
-        $install_dir = $this->config->app('install_dir');
+        $install_dir = $this->config->os('install_dir');
         $url = $this->config->app('repository');
 
         if (is_dir($install_dir)) {
@@ -44,7 +44,7 @@ class Unit3dSetup extends BaseInstaller
         $this->io->writeln("\n\n<fg=blue>Preparing the '.env' File</>");
         $this->seperator();
 
-        $install_dir = $this->config->app('install_dir');
+        $install_dir = $this->config->os('install_dir');
 
         if (file_exists("$install_dir/.env")) {
             $this->process(["rm $install_dir/.env"]);
@@ -82,7 +82,7 @@ class Unit3dSetup extends BaseInstaller
         $this->io->writeln("\n<fg=blue>Setting Permissions</>");
         $this->seperator();
 
-        $install_dir = $this->config->app('install_dir');
+        $install_dir = $this->config->os('install_dir');
         $web_user = $this->config->os('web-user');
 
         $this->process([
@@ -99,7 +99,7 @@ class Unit3dSetup extends BaseInstaller
         $this->io->writeln("\n\n<fg=blue>Setting Up Web Site</>");
         $this->seperator();
 
-        $install_dir = $this->config->app('install_dir');
+        $install_dir = $this->config->os('install_dir');
         $fqdn = $this->config->app('hostname');
         $web_user = $this->config->os('web-user');
         $echo_port = $this->config->app('echo-port');

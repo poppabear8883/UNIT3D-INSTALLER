@@ -3,8 +3,6 @@
 use App\Installer\Database\MySqlSetup;
 
 return [
-    'install_dir' => '/var/www/html',
-
     'min_php_version' => '7.1.3',
 
     'repository' => 'https://github.com/HDInnovations/UNIT3D.git',

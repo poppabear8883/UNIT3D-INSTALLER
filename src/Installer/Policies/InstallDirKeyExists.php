@@ -6,7 +6,7 @@ class InstallDirKeyExists extends BasePolicy
 {
     public function allows($param = null)
     {
-        if (!array_key_exists('install_dir', $this->config->get('app'))) {
+        if (!array_key_exists('install_dir', $this->config->get('os.' . distname()))) {
             $this->throwError(
                 "The key 'install_dir' was not found in 'app' config!
                 
