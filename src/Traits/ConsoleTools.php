@@ -75,14 +75,14 @@ trait ConsoleTools
         do {
             $answer = $this->io->ask($question, $default);
 
-            $valid = ($answer !== '');
+            $valid = ($answer !== '' && strpos($answer, ' ') === false);
 
             if (!$valid) {
-                $this->warning('Cannot be empty!');
+                $this->warning('Cannot be empty or contain spaces!');
             }
 
         } while (!$valid);
 
-        return $answer;
+        return trim($answer);
     }
 }
