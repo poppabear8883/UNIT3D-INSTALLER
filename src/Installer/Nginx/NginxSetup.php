@@ -34,7 +34,7 @@ class NginxSetup extends BaseInstaller
 
         if ($ssl == 'yes') {
             $this->process([
-                "certbot --nginx -n --agree-tos --email=$email  -d $fqdn -d www.$fqdn",
+                "certbot --redirect --nginx -n --agree-tos --email=$email  -d $fqdn -d www.$fqdn",
                 "certbot renew --dry-run"
             ]);
         }
