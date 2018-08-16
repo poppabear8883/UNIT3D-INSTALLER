@@ -28,7 +28,7 @@ class ServerSetup extends BaseInstaller
         $this->config->app('server_name', trim($server_name));
 
         do {
-            $hostname = $this->question('The FQDN for this server', fqdn());
+            $hostname = strtolower($this->question('The FQDN for this server', fqdn()));
 
             $valid = (str_contains($hostname, '.') || $hostname === 'localhost');
 
