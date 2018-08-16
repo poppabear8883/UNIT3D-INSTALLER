@@ -59,7 +59,9 @@ class MySqlSetup extends BaseInstaller
          * Critical
          */
         $this->process([
-            "mysql -e \"CREATE database $db\"",
+            "mysql -e \"DROP USER IF EXISTS $dbuser\"",
+            "mysql -e \"DROP DATABASE IF EXISTS $db\"",
+            "mysql -e \"CREATE DATABASE $db\"",
             "mysql -e \"CREATE USER '$dbuser'@'localhost' IDENTIFIED BY '$dbpass';\"",
             "mysql -e \"GRANT ALL PRIVILEGES ON $db . * TO '$dbuser'@'localhost'\"",
             "mysql -e \"UPDATE mysql.user SET authentication_string=PASSWORD('$root_pass') WHERE User='root'\"",
