@@ -5,8 +5,6 @@
 <hr>
 
 <p align="center">
-<a href="http://laravel.com"><img src="https://img.shields.io/badge/Laravel-5.6.28-f4645f.svg" /></a> 
-<a href="https://github.com/UNIT3D/UNIT3D/blob/master/LICENSE"><img src="https://img.shields.io/aur/license/yaourt.svg" /></a>
 <a href="https://trello.com/b/tUDsQ0Gs/unit3d"><img src="https://img.shields.io/badge/Trello-HERE-green.svg" /></a>
 <a class="badge-align" href="https://www.codacy.com/app/HDVinnie/UNIT3D?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=UNIT3D/UNIT3D&amp;utm_campaign=Badge_Grade"><img src="https://api.codacy.com/project/badge/Grade/6c6c6c940aec420e987ea82adea272ee"/></a> 
 <a href="https://liberapay.com/HDVinnie/"><img src="https://img.shields.io/badge/liberapay-Support%20UNIT3D-yellow.svg"></a>
@@ -14,41 +12,38 @@
 </p>
 
 ## This Repository
-Installer for the UNIT3D Platform.
-
-**Major Release v1.0-beta**
-
-**Clone this repository and run install.sh**
-
-```
-sudo ./install.sh
-```
+Installer for the [UNIT3D Torrent Tracker Platform](https://github.com/HDInnovations/UNIT3D).
 
 **Officially Suppoerted OS's**
 - Ubuntu 16.04 LTS
 - Ubuntu 18.04 LTS
 
 **Un-Officially Supported OS's**
+- Ubuntu 12.04 - 15.04
 - Debain 7+
 
-## About UNIT3D
-Nex-Gen Torrent Tracker Software called "UNIT3D."
+**For latest release:**
+```
+git clone https://github.com/ServNX/UNIT3D-INSTALLER.git installer
+cd installer
+sudo ./install.sh
+```
 
-This is PHP software based off the lovely Laravel Framework.
+**For Dev Branch:**
 
-UNIT3D currently offers the following features:
-  - Internal Forums System
-  - Staff Dashboard
-  - Faceted Ajax Torrent Search System
-  - BON Store
-  - Torrent Request Section with BON Bounties
-  - Freeleech System
-  - Double Upload System
-  - Featured Torrents System
-  - Polls System
-  - Extra-Stats
-  - PM System
-  - Multilingual Support
-  - TwoStep Auth System
-  - DB + Files Backup Manager
-  - and MUCH MORE!
+`Dev branch includes updates not yet officially released.`
+```
+git clone https://github.com/ServNX/UNIT3D-INSTALLER.git installer
+cd installer
+git checkout dev
+sudo ./install.sh
+```
+
+### General Support
+You can find us on the [UNIT3D Discord](https://discord.gg/Yk4NBUU) in the `#support` channel. 
+
+We can help you determine if your issue should be posted on GitHub.
+
+
+### Suggestions and/or Bug Reporting
+We encourage the use of [GitHub Issues](https://github.com/ServNX/UNIT3D-INSTALLER/issues/new)!
