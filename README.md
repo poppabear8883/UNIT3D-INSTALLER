@@ -7,7 +7,6 @@
 <p align="center">
 <a href="https://trello.com/b/tUDsQ0Gs/unit3d"><img src="https://img.shields.io/badge/Trello-HERE-green.svg" /></a>
 <a class="badge-align" href="https://www.codacy.com/app/HDVinnie/UNIT3D?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=UNIT3D/UNIT3D&amp;utm_campaign=Badge_Grade"><img src="https://api.codacy.com/project/badge/Grade/6c6c6c940aec420e987ea82adea272ee"/></a> 
-<a href="https://liberapay.com/HDVinnie/"><img src="https://img.shields.io/badge/liberapay-Support%20UNIT3D-yellow.svg"></a>
 <a href="https://www.patreon.com/UNIT3D"><img src="https://img.shields.io/badge/patreon-Support%20UNIT3D-orange.svg"></a>	
 </p>
 
@@ -24,7 +23,7 @@ Installer for the [UNIT3D Torrent Tracker Platform](https://github.com/HDInnovat
 
 **For latest release:**
 ```
-git clone https://github.com/ServNX/UNIT3D-INSTALLER.git installer
+git clone https://github.com/poppabear8883/UNIT3D-INSTALLER.git installer
 cd installer
 sudo ./install.sh
 ```
@@ -33,7 +32,7 @@ sudo ./install.sh
 
 `Dev branch includes updates not yet officially released.`
 ```
-git clone https://github.com/ServNX/UNIT3D-INSTALLER.git installer
+git clone https://github.com/poppabear8883/UNIT3D-INSTALLER.git installer
 cd installer
 git checkout dev
 sudo ./install.sh
@@ -46,4 +45,4 @@ We can help you determine if your issue should be posted on GitHub.
 
 
 ### Suggestions and/or Bug Reporting
-We encourage the use of [GitHub Issues](https://github.com/ServNX/UNIT3D-INSTALLER/issues/new)!
+We encourage the use of [GitHub Issues](https://github.com/poppabear8883/UNIT3D-INSTALLER/issues/new)!
