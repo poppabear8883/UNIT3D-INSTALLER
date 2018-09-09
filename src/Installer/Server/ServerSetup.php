@@ -83,17 +83,17 @@ class ServerSetup extends BaseInstaller
         $driver = $this->io->choice('Choose a database driver', $driver_choices, $default_driver);
         $this->config->app('database_driver', $driver);
 
-        $this->io->writeln('<fg=red>It is STRONGLY advised to set a Database Server Password.</>');
-        $mysql_pass = $this->question('Database Server Password', '');
-        $this->config->app('dbrootpass', $mysql_pass);
+        $this->io->writeln('<fg=red>It is STRONGLY advised to set a DB Server Root Password.</>');
+        $db_root_pass = $this->question('DB Server Root Password', '');
+        $this->config->app('dbrootpass', $db_root_pass);
 
-        $db = $this->question('Database Name', 'unit3d');
+        $db = $this->question('UNIT3D DB Name', 'unit3d');
         $this->config->app('db', $db);
 
-        $dbuser = $this->question('Database User', 'unit3d');
+        $dbuser = $this->question('UNIT3D DB User', 'unit3d');
         $this->config->app('dbuser', $dbuser);
 
-        $dbpass = $this->question('Database Password', '');
+        $dbpass = $this->question('UNIT3D DB Password', '');
         $this->config->app('dbpass', $dbpass);
     }
 
