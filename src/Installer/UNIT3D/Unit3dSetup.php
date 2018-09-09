@@ -54,7 +54,6 @@ class Unit3dSetup extends BaseInstaller
             [
                 '{{FQDN}}' => $this->config->app('hostname'),
                 '{{DBDRIVER}}' => strtolower($this->config->app('database_driver')),
-                '{{DBPORT}}' => $this->config->app('dbpass'),
                 '{{DB}}' => $this->config->app('db'),
                 '{{DBUSER}}' => $this->config->app('dbuser'),
                 '{{DBPASS}}' => $this->config->app('dbpass'),
