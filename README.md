@@ -39,6 +39,10 @@ cd installer
 git checkout dev
 sudo ./install.sh
 ```
+### Contributing
+***ALL PULL REQUESTS SHOULD GO TO THE `dev` BRANCH***
+
+*You will have to select this branch manually as it defaults to the `master` branch*
 
 ### General Support
 You can find us on the [UNIT3D Discord](https://discord.gg/Yk4NBUU) in the `#support` channel. 
