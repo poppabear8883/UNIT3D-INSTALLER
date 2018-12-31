@@ -28,6 +28,7 @@ class Prerequisites extends BaseInstaller
         $this->install($pkgs);
 
         $this->process(['npm install -g laravel-echo-server']);
+        $this->install('ufw');
         $this->process(['ufw allow 6001']);
 
         $this->io->writeln('');

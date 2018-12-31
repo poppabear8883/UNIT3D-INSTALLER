@@ -9,6 +9,19 @@ rm -rf /var/cache/debconf/*.*
 echo -e "\n\n$Purple Preparing Environment For The Installer ... $Color_Off"
 echo "============================================="
 
+check_locale() {
+
+    echo -e "\n$Cyan Setting UTF8 ...$Color_Off"
+
+    apt-get -qq update
+    apt-get install -qq language-pack-en-base > /dev/null
+    export LC_ALL=en_US.UTF-8
+    export LANG=en_US.UTF-8
+    apt-get install -qq software-properties-common > /dev/null
+
+    echo -e "$IGreen OK $Color_Off"
+}
+
 # Adds PPA's
 add_ppa() {
     echo -e "\n$Cyan Adding PPA Repositories ... $Color_Off"
@@ -67,6 +80,8 @@ check() {
         exit $1
     fi
 }
+
+check_locale
 
 add_ppa ppa:nginx/development ppa:ondrej/php ppa:certbot/certbot
 
