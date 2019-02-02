@@ -102,7 +102,7 @@ class ServerSetup extends BaseInstaller
         $this->io->writeln('<fg=blue>Chat Settings</>');
         $this->seperator();
 
-        $port = $this->question('Chat Listening Port', '6001');
+        $port = $this->question('Chat Listening Port', '8443');
         $this->config->app('echo-port', $port);
     }
 

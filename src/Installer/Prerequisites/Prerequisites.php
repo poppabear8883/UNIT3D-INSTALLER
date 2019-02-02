@@ -29,7 +29,7 @@ class Prerequisites extends BaseInstaller
 
         $this->process(['npm install -g laravel-echo-server']);
         $this->install('ufw');
-        $this->process(['ufw allow 6001']);
+        $this->process(['ufw allow 8443']);
 
         $this->io->writeln('');
     }
