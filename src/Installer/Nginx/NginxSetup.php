@@ -33,7 +33,7 @@ class NginxSetup extends BaseInstaller
         $this->install('python-certbot-nginx');
 
         if ($ssl == 'yes') {
-            $fqdn = stringStartsWith('www.') ? $fqdn : "www.$fqdn";
+            $fqdn = substr($fqdn, 0, 4) === "www." ? $fqdn : "www.$fqdn";
 
             $this->process([
                 "certbot --redirect --nginx -n --agree-tos --email=$email  -d $fqdn -d $fqdn",
