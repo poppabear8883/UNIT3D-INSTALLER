@@ -81,7 +81,7 @@ class InstallCommand extends Command
         $password = $this->config->app('password');
 
         $this->io->writeln([
-            '<fg=pink>Please run "certbot renew --dry-run" manually to test your LetsEncrypt renewal process!!!</>',
+            '<fg=magenta>Please run "certbot renew --dry-run" manually to test your LetsEncrypt renewal process!!!</>',
         ]);
 
         $this->io->note([
