@@ -61,8 +61,8 @@ class ServerSetup extends BaseInstaller
         $this->io->writeln('<fg=blue>User Settings</>');
         $this->seperator();
 
-        $dbpass = $this->question('Owner Username', '');
-        $this->config->app('owner', $dbpass);
+        $dbowner = $this->question('Owner Username', '');
+        $this->config->app('owner', $dbowner);
 
         $dbpass = $this->question('Owner Password', '');
         $this->config->app('password', $dbpass);
