@@ -6,7 +6,7 @@ return [
      * UBUNTU
      */
     'ubuntu' => [
-        'pkg_manager' => 'apt',
+        'pkg_manager' => 'apt-get',
         'web-user' => 'www-data',
         'install_dir' => '/var/www/html',
         'nginx-sites-available_path' => '/etc/nginx/sites-available',
