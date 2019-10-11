@@ -31,7 +31,7 @@ server {
        return 301 {{FQDN}};
     }
 
-    if ($host = www.tvchaosuk.com) {
+    if ($host = www.{{FQDN}}) {
         return 301 {{FQDN}}$request_uri;
     }
 }
