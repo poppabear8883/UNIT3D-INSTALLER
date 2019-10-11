@@ -34,7 +34,7 @@ class NginxSetup extends BaseInstaller
 
         if ($ssl == 'yes') {
             $this->process([
-                "certbot --redirect --nginx -n --agree-tos --email=$email  -d $fqdn --rsa-key-size 2048",
+                "certbot --redirect --nginx -n --agree-tos --email=$email  -d $fqdn -d www.$fqdn --rsa-key-size 2048",
             ]);
         }
 
