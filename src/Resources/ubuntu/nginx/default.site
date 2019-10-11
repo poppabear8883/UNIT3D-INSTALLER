@@ -34,4 +34,8 @@ server {
     if ($host = www.{{FQDN}}) {
         return 301 {{FQDN}}$request_uri;
     }
+    
+    location ~* ^.*(\.(?:git|svn|htaccess|github))$ {
+        return 403;
+    }
 }
