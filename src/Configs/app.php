@@ -3,7 +3,7 @@
 use App\Installer\Database\MySqlSetup;
 
 return [
-    'min_php_version' => '7.1.3',
+    'min_php_version' => '7.4',
 
     'repository' => 'https://github.com/HDInnovations/UNIT3D-Community-Edition.git',
 
@@ -54,7 +54,5 @@ return [
     /* API Keys */
     'tmdb-key' => '',
     'omdb-key' => '',
-
-    'fanart-key' => '',
-    'tvdb-key' => '',
+    'igdb-key' => '',
 ];

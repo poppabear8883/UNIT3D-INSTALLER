@@ -129,6 +129,16 @@ class ServerSetup extends BaseInstaller
 
         $key = $this->question('OMDB Key', '');
         $this->config->app('omdb-key', $key);
+
+        $this->io->writeln('<fg=magenta>Obtaining an IGDB Key</>:');
+        $this->io->listing([
+            'Visit <fg=cyan>https://api.igdb.com</>',
+            'Create Free Account',
+            'Generate a API Key',
+        ]);
+
+        $key = $this->question('IGDB Key', '');
+        $this->config->app('igdb-key', $key);
     }
 
     protected function mail()
@@ -137,10 +147,10 @@ class ServerSetup extends BaseInstaller
         $this->io->writeln('(Used for things like invites, registration, ect.)');
         $this->seperator();
 
-        $this->io->writeln('<fg=blue>/* You will need a provider like torguard. */</>');
-        $this->io->writeln('<fg=cyan>https://torguard.net/anonymous-email.php</>');
+        $this->io->writeln('<fg=blue>/* You will need a provider like sendrid. */</>');
+        $this->io->writeln('<fg=cyan>https://sendgrid.com/pricing/</>');
 
-        $this->io->writeln('Ref: <fg=cyan>https://laravel.com/docs/5.6/mail#introduction</>');
+        $this->io->writeln('Ref: <fg=cyan>https://laravel.com/docs/6.x/mail#introduction</>');
 
         $value = $this->io->choice('Mail Driver', [
             "smtp",
