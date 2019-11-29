@@ -27,6 +27,7 @@ class NginxSetup extends BaseInstaller
             "ufw allow 'Nginx Full'",
             "ufw delete allow 'Nginx HTTP'",
             "ufw allow $echo_port",
+            "ufw enable",
             "systemctl restart nginx"
         ]);
 
