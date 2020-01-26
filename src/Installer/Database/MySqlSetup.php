@@ -73,7 +73,7 @@ class MySqlSetup extends BaseInstaller
          * Non-Critical
          */
         $this->process([
-            "mysql -e \"DROP DATABASE test\"",
+            "mysql -e \"DROP DATABASE IF EXISTS test\"",
             "mysql -e \"DELETE FROM mysql.db WHERE Db='test' OR Db='test\\_%'\"",
         ], true);
 
