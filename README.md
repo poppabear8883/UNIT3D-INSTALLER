@@ -22,20 +22,6 @@ cd installer
 sudo ./install.sh
 ```
 
-**For Dev Branch:**
-
-`Dev branch includes updates not yet officially released.`
-```
-git clone https://github.com/poppabear8883/UNIT3D-INSTALLER.git installer
-cd installer
-git checkout dev
-sudo ./install.sh
-```
-### Contributing
-***ALL PULL REQUESTS SHOULD GO TO THE `dev` BRANCH***
-
-*You will have to select this branch manually as it defaults to the `master` branch*
-
 ### General Support
 You can find us on the [UNIT3D Discord](https://discord.gg/Yk4NBUU) in the `#support` channel. 
 
