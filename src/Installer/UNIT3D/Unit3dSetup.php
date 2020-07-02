@@ -152,7 +152,7 @@ class Unit3dSetup extends BaseInstaller
         $install_dir = $this->config->os('install_dir');
 
         $this->process([
-            "(crontab -l ; echo \"* * * * * php $install_dir/artisan schedule:run >> /dev/null 2>&1\") | crontab -"
+            "(crontab -l ; echo \"* * * * * www-data php $install_dir/artisan schedule:run >> /dev/null 2>&1\") | crontab -"
         ]);
     }
 
