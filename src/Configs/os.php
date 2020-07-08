@@ -25,6 +25,7 @@ return [
             'zip' => 'Compress Files',
             'unzip' => 'Decompress Files',
             'htop' => 'Monitor Server Resources',
+            'libpng12-0' => 'PNG Library',
         ],
     ]
 

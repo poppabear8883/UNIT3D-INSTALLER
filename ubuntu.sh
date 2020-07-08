@@ -22,6 +22,18 @@ check_locale() {
     echo -e "$IGreen OK $Color_Off"
 }
 
+# Adds PPA's
+add_ppa() {
+    echo -e "\n$Cyan Adding PPA Repositories ... $Color_Off"
+
+    for ppa in "$@"; do
+        add-apt-repository -y $ppa > /dev/null 2>&1
+        check $? "Adding $ppa Failed!"
+    done
+
+    echo -e "$IGreen OK $Color_Off"
+}
+
 # Installs Environment Prerequisites
 add_pkgs() {
     # Update apt
@@ -70,6 +82,8 @@ check() {
 }
 
 check_locale
+
+add_ppa ppa:linuxuprising/libpng12
 
 add_pkgs
 
