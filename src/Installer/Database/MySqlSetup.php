@@ -27,11 +27,11 @@ class MySqlSetup extends BaseInstaller
         $this->process(['cp -f ' . resource_path(distname() . "/mysql/$mycnf") . ' /etc/mysql/my.cnf']);
 
         if (distname() === 'ubuntu') {
-            if (distmainver() !== '16.04' && distmainver() !== '18.04') {
+            if (distmainver() !== '16.04' && distmainver() !== '18.04' && distmainver() !== '20.04') {
                 $this->process(['mysql_install_db']);
             }
 
-            if (distmainver() === '18.04' && !is_dir('/var/lib/mysql')) {
+            if ((distmainver() === '18.04' || distmainver() === '20.04') && !is_dir('/var/lib/mysql')) {
                 $this->process([
                     'mkdir /var/lib/mysql',
                     'chown mysql:mysql /var/lib/mysql',
@@ -64,7 +64,7 @@ class MySqlSetup extends BaseInstaller
             "mysql -e \"CREATE DATABASE $db\"",
             "mysql -e \"CREATE USER '$dbuser'@'localhost' IDENTIFIED BY '$dbpass';\"",
             "mysql -e \"GRANT ALL PRIVILEGES ON $db . * TO '$dbuser'@'localhost'\"",
-            "mysql -e \"UPDATE mysql.user SET authentication_string=PASSWORD('$root_pass') WHERE User='root'\"",
+            "mysql -e \"ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '$root_pass'\"",
             "mysql -e \"DELETE FROM mysql.user WHERE User=''\"",
             "mysql -e \"DELETE FROM mysql.user WHERE User='root' AND Host NOT IN ('localhost', '127.0.0.1', '::1')\"",
         ]);

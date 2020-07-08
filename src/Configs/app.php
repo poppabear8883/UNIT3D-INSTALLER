@@ -12,7 +12,6 @@ return [
          * Map to the Installer class
          */
         'MySql' => MySqlSetup::class,
-
         //'MariaDB' => '',
         //'Postgres' => '',
     ],
@@ -53,6 +52,5 @@ return [
 
     /* API Keys */
     'tmdb-key' => '',
-    'omdb-key' => '',
     'igdb-key' => '',
 ];

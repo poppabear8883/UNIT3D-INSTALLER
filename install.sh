@@ -4,7 +4,6 @@ source tools/colors.sh
 
 # Detect OS
 case $(head -n1 /etc/issue | cut -f 1 -d ' ') in
-    Debian)     type="debian" ;;
     Ubuntu)     type="ubuntu" ;;
     *)          type='' ;;
 esac
@@ -18,10 +17,15 @@ if [ "$type" = '' ]; then
     echo -e "\n$Purple This can happen if you are using an OS template from a provider like OVH amongst others. $Color_Off\n"
 
     PS3='Please select the # for your OS: '
-    options=("Ubuntu 18.04" "Ubuntu 16.04" "Other Ubuntu" "Debian" "Other" "Quit")
+    options=("Ubuntu 20.04" "Ubuntu 18.04" "Ubuntu 16.04" "Quit")
     select opt in "${options[@]}"
     do
         case $opt in
+            "Ubuntu 20.04")
+                echo 'Ubuntu 20.04 LTS \n \l' > /etc/issue
+                type='ubuntu'
+                break
+                ;;
             "Ubuntu 18.04")
                 echo 'Ubuntu 18.04 LTS \n \l' > /etc/issue
                 type='ubuntu'
@@ -31,20 +35,6 @@ if [ "$type" = '' ]; then
                 echo 'Ubuntu 16.04 LTS \n \l' > /etc/issue
                 type='ubuntu'
                 break
-                ;;
-            "Other Ubuntu")
-                echo 'Ubuntu UNKNOWN LTS \n \l' > /etc/issue
-                type='ubuntu'
-                break
-                ;;
-            "Debian")
-                echo 'Debian GNU/Linux \n \l' > /etc/issue
-                type='debian'
-                break
-                ;;
-            "Other")
-                echo -e "$Red Unsupported GNU/Linux distribution $Color_Off"
-                exit 1
                 ;;
             "Quit")
                 exit 0

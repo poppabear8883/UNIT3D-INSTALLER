@@ -83,7 +83,7 @@ check() {
 
 check_locale
 
-add_ppa ppa:nginx/development ppa:ondrej/php ppa:certbot/certbot
+add_ppa ppa:linuxuprising/libpng12
 
 add_pkgs
 
