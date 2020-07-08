@@ -31,7 +31,7 @@ class NginxSetup extends BaseInstaller
             "systemctl restart nginx"
         ]);
 
-        $this->install('python-certbot-nginx');
+        $this->install('certbot python3-certbot-nginx');
 
         if ($ssl == 'yes') {
             $this->process([

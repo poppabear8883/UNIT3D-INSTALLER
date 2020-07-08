@@ -61,7 +61,6 @@ class Unit3dSetup extends BaseInstaller
                 '{{OWNEREMAIL}}' => $this->config->app('owner_email'),
                 '{{OWNERPASSWORD}}' => $this->config->app('password'),
                 '{{TMDBAPIKEY}}' => $this->config->app('tmdb-key'),
-                '{{OMDBAPIKEY}}' => $this->config->app('omdb-key'),
                 '{{IGDBAPIKEY}}' => $this->config->app('igdb-key'),
                 '{{MAILDRIVER}}' => $this->config->app('mail_driver'),
                 '{{MAILHOST}}' => $this->config->app('mail_host'),
@@ -152,7 +151,7 @@ class Unit3dSetup extends BaseInstaller
         $install_dir = $this->config->os('install_dir');
 
         $this->process([
-            "(crontab -l ; echo \"* * * * * www-data php $install_dir/artisan schedule:run >> /dev/null 2>&1\") | crontab -"
+            "(crontab -l ; echo \"* * * * * php $install_dir/artisan schedule:run >> /dev/null 2>&1\") | crontab -"
         ]);
     }
 

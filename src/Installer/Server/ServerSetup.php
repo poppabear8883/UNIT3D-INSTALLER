@@ -121,15 +121,6 @@ class ServerSetup extends BaseInstaller
         $key = $this->question('TMDB Key', '');
         $this->config->app('tmdb-key', $key);
 
-        $this->io->writeln('<fg=magenta>Obtaining an OMDB Key</>:');
-        $this->io->listing([
-            'Visit <fg=cyan>https://www.omdbapi.com/apikey.aspx</>',
-            'Choose Free or Patreon (Recommended)',
-        ]);
-
-        $key = $this->question('OMDB Key', '');
-        $this->config->app('omdb-key', $key);
-
         $this->io->writeln('<fg=magenta>Obtaining an IGDB Key</>:');
         $this->io->listing([
             'Visit <fg=cyan>https://api.igdb.com</>',
