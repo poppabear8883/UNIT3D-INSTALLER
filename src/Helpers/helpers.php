@@ -133,6 +133,9 @@ if (!function_exists('distinfo')) {
         $mainver = $matches[0];
 
         switch ($mainver) {
+            case "20.04":
+                $relname = "(Focal Fossa)";
+                break;
             case "18.04":
                 $relname = "(Bionic Beaver)";
                 break;

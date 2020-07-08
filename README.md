@@ -12,6 +12,7 @@
 Installer for the [UNIT3D Torrent Tracker Platform](https://github.com/HDInnovations/UNIT3D).
 
 **Officially Supported OS's**
+- Ubuntu 20.04 LTS
 - Ubuntu 18.04 LTS
 - Ubuntu 16.04 LTS
 
