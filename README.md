@@ -26,8 +26,8 @@ sudo ./install.sh
 **For Ubuntu 16.04 LTS or Ubuntu 18.04 LTS:**
 ```
 git clone https://github.com/poppabear8883/UNIT3D-INSTALLER.git installer
-git checkout Ubuntu-16.04-18.04
 cd installer
+git checkout Ubuntu-16.04-18.04
 sudo ./install.sh
 ```
 
