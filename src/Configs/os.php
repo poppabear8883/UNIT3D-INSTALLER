@@ -15,7 +15,6 @@ return [
             'nginx' => 'Web Server',
             'mysql-server' => 'Database Server',
             'supervisor' => 'A Process Control System',
-            'keydb' => 'In-memory Data Structure Store',
             'nodejs' => 'JavaScript Run-time Environment (Includes npm)',
             'build-essential' => 'Basic C/C++ Development Environment',
             'git' => 'Version Control',

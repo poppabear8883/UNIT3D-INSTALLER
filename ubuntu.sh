@@ -72,6 +72,17 @@ install_phpredis() {
     echo -e "$IGreen OK $Color_Off"
 }
 
+# Installs KeyDB
+install_keydb() {
+    echo -e "\n$Cyan Installing KeyDB ... $Color_Off"
+
+    curl -s --compressed -o /etc/apt/trusted.gpg.d/keydb.gpg https://download.keydb.dev/keydb-ppa/keydb.gpg
+    curl -s --compressed -o /etc/apt/sources.list.d/keydb.list https://download.keydb.dev/keydb-ppa/keydb.lists
+    apt install keydb
+
+    echo -e "$IGreen OK $Color_Off"
+}
+
 # Adds installer packages
 installer_pkgs() {
     echo -e "\n$Cyan Adding Installer Packages ... $Color_Off"
@@ -93,14 +104,14 @@ check() {
 check_locale
 
 add_ppa ppa:linuxuprising/libpng12
-curl -s --compressed -o /etc/apt/trusted.gpg.d/keydb.gpg https://download.keydb.dev/keydb-ppa/keydb.gpg
-curl -s --compressed -o /etc/apt/sources.list.d/keydb.list https://download.keydb.dev/keydb-ppa/keydb.lists
 
 add_pkgs
 
 install_composer
 
 install_phpredis
+
+install_keydb
 
 installer_pkgs
 
