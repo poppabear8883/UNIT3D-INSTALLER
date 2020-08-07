@@ -76,9 +76,10 @@ install_phpredis() {
 install_keydb() {
     echo -e "\n$Cyan Installing KeyDB ... $Color_Off"
 
-    curl -s --compressed -o /etc/apt/trusted.gpg.d/keydb.gpg https://download.keydb.dev/keydb-ppa/keydb.gpg
-    curl -s --compressed -o /etc/apt/sources.list.d/keydb.list https://download.keydb.dev/keydb-ppa/keydb.lists
-    apt install keydb
+    sudo curl -s --compressed -o /etc/apt/trusted.gpg.d/keydb.gpg https://download.keydb.dev/keydb-ppa/keydb.gpg
+    sudo curl -s --compressed -o /etc/apt/sources.list.d/keydb.list https://download.keydb.dev/keydb-ppa/keydb.lists
+    sudo apt update
+    sudo apt-get install -qq keydb > /dev/null
 
     echo -e "$IGreen OK $Color_Off"
 }
