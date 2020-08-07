@@ -63,27 +63,6 @@ install_composer() {
     echo -e "$IGreen OK $Color_Off"
 }
 
-# Installs PHPRedis
-install_phpredis() {
-    echo -e "\n$Cyan Installing PHPRedis ... $Color_Off"
-
-    pecl install redis
-
-    echo -e "$IGreen OK $Color_Off"
-}
-
-# Installs KeyDB
-install_keydb() {
-    echo -e "\n$Cyan Installing KeyDB ... $Color_Off"
-
-    sudo curl -s --compressed -o /etc/apt/trusted.gpg.d/keydb.gpg https://download.keydb.dev/keydb-ppa/keydb.gpg
-    sudo curl -s --compressed -o /etc/apt/sources.list.d/keydb.list https://download.keydb.dev/keydb-ppa/keydb.lists
-    sudo apt update
-    sudo apt-get install -qq keydb > /dev/null
-
-    echo -e "$IGreen OK $Color_Off"
-}
-
 # Adds installer packages
 installer_pkgs() {
     echo -e "\n$Cyan Adding Installer Packages ... $Color_Off"
@@ -109,10 +88,6 @@ add_ppa ppa:linuxuprising/libpng12
 add_pkgs
 
 install_composer
-
-install_phpredis
-
-install_keydb
 
 installer_pkgs
 
