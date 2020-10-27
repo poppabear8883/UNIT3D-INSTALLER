@@ -22,7 +22,7 @@ class Prerequisites extends BaseInstaller
             $this->throwError('Aborted ...');
         };
 
-        $this->process(['curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -']);
+        $this->process(['curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -']);
 
         $pkgs = implode(' ', array_keys($software));
         $this->install($pkgs);

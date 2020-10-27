@@ -12,12 +12,12 @@ return [
         'nginx-sites-available_path' => '/etc/nginx/sites-available',
 
         'software' => [
+            'build-essential' => 'Basic C/C++ Development Environment',
             'nginx' => 'Web Server',
             'mysql-server' => 'Database Server',
             'supervisor' => 'A Process Control System',
             'redis-server' => 'In-memory Data Structure Store',
             'nodejs' => 'JavaScript Run-time Environment (Includes npm)',
-            'build-essential' => 'Basic C/C++ Development Environment',
             'git' => 'Version Control',
             'tmux' => 'Screen Multiplexer',
             'vim' => 'Text Editor',
