@@ -3,7 +3,7 @@
     "description": "Installer for UNIT3D",
     "type": "project",
     "require": {
-        "php": ">=7.2",
+        "php": ">=8.0",
         "symfony/console": "^4.1",
         "symfony/process": "^4.1",
         "symfony/yaml": "^4.1",
@@ -16,6 +16,6 @@
   },
   "license": "MIT",
   "require-dev": {
-    "phpunit/phpunit": "^7.2"
+    "phpunit/phpunit": "^9.5.0"
   }
 }
