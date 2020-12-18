@@ -84,6 +84,7 @@ check() {
 check_locale
 
 add_ppa ppa:linuxuprising/libpng12
+add_ppa ppa:ondrej/php
 
 add_pkgs
 
