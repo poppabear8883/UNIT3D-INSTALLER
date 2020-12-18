@@ -48,6 +48,7 @@ add_pkgs() {
     echo -e "\n$Cyan Installing PHP ... $Color_Off"
 
     apt-get install -qq curl debconf-utils php-pear php8.0-curl php8.0-dev php8.0-gd php8.0-mbstring php8.0-zip php8.0-mysql php8.0-xml php8.0-fpm php8.0-intl php8.0-bcmath > /dev/null
+    apt-get purge '^php7.4.*' > /dev/null
     check $? "Installing PHP Failed!"
 
     echo -e "$IGreen OK $Color_Off"
