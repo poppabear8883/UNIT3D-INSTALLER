@@ -125,7 +125,7 @@ class Unit3dSetup extends BaseInstaller
             'laravel-echo-server client:add',
             'composer install -q',
             'npm install',
-            'npm run prod',
+            'npx mix -p',
             'php artisan key:generate',
             'php artisan migrate --seed',
             'php artisan test:email'
