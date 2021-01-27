@@ -61,7 +61,6 @@ class Unit3dSetup extends BaseInstaller
                 '{{OWNEREMAIL}}' => $this->config->app('owner_email'),
                 '{{OWNERPASSWORD}}' => $this->config->app('password'),
                 '{{TMDBAPIKEY}}' => $this->config->app('tmdb-key'),
-                '{{IGDBAPIKEY}}' => $this->config->app('igdb-key'),
                 '{{MAILDRIVER}}' => $this->config->app('mail_driver'),
                 '{{MAILHOST}}' => $this->config->app('mail_host'),
                 '{{MAILPORT}}' => $this->config->app('mail_port'),
