@@ -120,16 +120,6 @@ class ServerSetup extends BaseInstaller
 
         $key = $this->question('TMDB Key', '');
         $this->config->app('tmdb-key', $key);
-
-        $this->io->writeln('<fg=magenta>Obtaining an IGDB Key</>:');
-        $this->io->listing([
-            'Visit <fg=cyan>https://api.igdb.com</>',
-            'Create Free Account',
-            'Generate a API Key',
-        ]);
-
-        $key = $this->question('IGDB Key', '');
-        $this->config->app('igdb-key', $key);
     }
 
     protected function mail()
