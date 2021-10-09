@@ -32,7 +32,7 @@ sudo ./install.sh
 ```
 
 ### General Support
-You can find us on the [UNIT3D Discord](https://discord.gg/Yk4NBUU) in the `#support` channel. 
+You can find us on the [UNIT3D Discord](https://discord.gg/7JSKn5DwHT). 
 
 We can help you determine if your issue should be posted on GitHub.
 
