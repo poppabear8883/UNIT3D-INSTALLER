@@ -7,11 +7,11 @@ server {
 
     server_name {{FQDN}} www.{{FQDN}};
     
-    location ~* .(jpg|jpeg|png|gif|ico|svg)$ {
+    location ~* \.(jpg|jpeg|png|gif|ico|svg)$ {
         expires 365d;
     }
     
-    location ~ .(gif|png|jpg|jpeg|svg|css|js|ico)$ {
+    location ~* \.(gif|png|jpg|jpeg|svg|css|js|ico)$ {
         valid_referers none blocked {{FQDN}} www.{{FQDN}};
         if ($invalid_referer) {
             return   403;
