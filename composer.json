@@ -4,6 +4,7 @@
     "type": "project",
     "require": {
         "php": ">=8.0",
+        "ext-dom": "*",
         "symfony/console": "^4.1",
         "symfony/process": "^4.1",
         "symfony/yaml": "^4.1",
