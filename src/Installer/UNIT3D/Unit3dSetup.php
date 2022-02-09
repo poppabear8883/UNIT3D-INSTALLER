@@ -34,7 +34,7 @@ class Unit3dSetup extends BaseInstaller
 
         $this->process(["git clone $url $install_dir"]);
 
-        if (!is_dir($install_dir) || !is_file("$install_dir/server.php")) {
+        if (!is_dir($install_dir)) {
             $this->throwError('Something went wrong with the cloning process. Please report this bug!');
         }
     }
