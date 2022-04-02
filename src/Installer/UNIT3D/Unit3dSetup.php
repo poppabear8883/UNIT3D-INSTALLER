@@ -108,6 +108,10 @@ class Unit3dSetup extends BaseInstaller
             '{{PORT}}' => $echo_port,
             '{{PROTOCOL}}' => $protocol,
         ], '../laravel-echo-server.stub', '/var/www/html/laravel-echo-server.json');
+        
+        $this->process([
+            "chown -R $web_user:$web_user $install_dir/laravel-echo-server.json",
+        ]);
 
         $this->createFromStub([
             '{{INSTALLDIR}}' => $install_dir,
