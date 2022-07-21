@@ -17,10 +17,15 @@ if [ "$type" = '' ]; then
     echo -e "\n$Purple This can happen if you are using an OS template from a provider like OVH amongst others. $Color_Off\n"
 
     PS3='Please select the # for your OS: '
-    options=("Ubuntu 20.04" "Ubuntu 18.04" "Ubuntu 16.04" "Quit")
+    options=("Ubuntu 22.04" "Ubuntu 20.04" "Ubuntu 18.04" "Ubuntu 16.04" "Quit")
     select opt in "${options[@]}"
     do
         case $opt in
+            "Ubuntu 22.04")
+                echo 'Ubuntu 22.04 LTS \n \l' > /etc/issue
+                type='ubuntu'
+                break
+                ;;
             "Ubuntu 20.04")
                 echo 'Ubuntu 20.04 LTS \n \l' > /etc/issue
                 type='ubuntu'
